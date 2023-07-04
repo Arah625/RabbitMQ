@@ -8,6 +8,7 @@ public class DefaultForVirtualHostQueueArgumentsBuilder {
 
     public DefaultForVirtualHostQueueArgumentsBuilder() {
         this.arguments = new HashMap<>();
+        this.arguments.put("x-queue-type", "classic");
     }
 
     public DefaultForVirtualHostQueueArgumentsBuilder withAutoExpire(int autoExpire) {

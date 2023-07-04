@@ -8,6 +8,7 @@ public class QuorumQueueArgumentsBuilder {
 
     public QuorumQueueArgumentsBuilder() {
         this.arguments = new HashMap<>();
+        this.arguments.put("x-queue-type", "quorum");
     }
 
     public QuorumQueueArgumentsBuilder withAutoExpire(int autoExpire) {
@@ -50,18 +51,23 @@ public class QuorumQueueArgumentsBuilder {
         return this;
     }
 
-    public QuorumQueueArgumentsBuilder withMaximumPriority(int maxPriority) {
-        arguments.put("x-max-priority", maxPriority);
+    public QuorumQueueArgumentsBuilder withDeliveryLimit(int deliveryLimit) {
+        arguments.put("x-delivery-limit", deliveryLimit);
         return this;
     }
 
-    public QuorumQueueArgumentsBuilder withQueueVersion(int queueVersion) {
-        arguments.put("x-queue-version", queueVersion);
+    public QuorumQueueArgumentsBuilder withInitialClusterSize(int clusterSize) {
+        arguments.put("x-quorum-initial-group-size", clusterSize);
         return this;
     }
 
-    public QuorumQueueArgumentsBuilder withMasterLocator(String masterLocator) {
-        arguments.put("x-queue-master-locator", masterLocator);
+    public QuorumQueueArgumentsBuilder withDeadLetterStrategy(String deadLetterStrategy) {
+        arguments.put("x-dead-letter-strategy", deadLetterStrategy);
+        return this;
+    }
+
+    public QuorumQueueArgumentsBuilder withLeaderLocator(String leaderLocator) {
+        arguments.put("x-queue-leader-locator", leaderLocator);
         return this;
     }
 

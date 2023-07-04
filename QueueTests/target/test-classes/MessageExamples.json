@@ -1,0 +1,39 @@
+{
+  "basicVersionMessage": {
+    "properties": {
+      "headers": {
+        "city": "San Francisco",
+        "date": "2023-07-03"
+      },
+      "delivery_mode": 2,
+      "priority": 1
+    },
+    "routing_key": "weather_updates",
+    "payload": "{ \"temperature\": \"68F\", \"condition\": \"Sunny\" }",
+    "payload_encoding": "string"
+  },
+  "extendedVersionMessage": {
+    "properties": {
+      "content_type": "application/json",
+      "content_encoding": "UTF-8",
+      "delivery_mode": 2,
+      "priority": 0,
+      "correlation_id": "1234-5678-90",
+      "reply_to": "order_processing_queue",
+      "expiration": "60000",
+      "message_id": "order_998877",
+      "timestamp": "1627905600000",
+      "type": "order_placed",
+      "user_id": "john_doe",
+      "app_id": "my_ecommerce_app",
+      "cluster_id": "cluster_east",
+      "headers": {
+        "store_location": "San Francisco",
+        "order_type": "online"
+      }
+    },
+    "routing_key": "orders",
+    "payload": "{ \"order_id\": \"998877\", \"product_id\": \"P12345\", \"quantity\": 2 }",
+    "payload_encoding": "string"
+  }
+}

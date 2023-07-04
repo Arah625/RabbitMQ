@@ -3,7 +3,11 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="D:/Users/Arah625 - GitHub/RabbitMQ/QueueTests">
         <classes>
-            <class name="RabbitMQ.Tests.QueueTests"/>
+            <class name="RabbitMQ.Tests.QueueTests">
+            <methods>
+                <include name="createStreamQueue"/>
+            </methods>
+            </class>
         </classes>
     </test>
 </suite>

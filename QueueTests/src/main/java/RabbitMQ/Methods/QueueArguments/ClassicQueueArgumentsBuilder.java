@@ -8,6 +8,7 @@ public class ClassicQueueArgumentsBuilder {
 
     public ClassicQueueArgumentsBuilder() {
         this.arguments = new HashMap<>();
+        this.arguments.put("x-queue-type", "classic");
     }
 
     public ClassicQueueArgumentsBuilder withAutoExpire(int autoExpire) {

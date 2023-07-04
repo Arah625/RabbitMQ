@@ -1,0 +1,40 @@
+{
+  "basicVersionMessage": {
+    "properties": {
+      "headers": {
+        "headerKey1": "headerValue1",
+        "headerKey2": "headerValue2"
+      },
+      "delivery_mode": 2,
+      "priority": 1
+    },
+    "routing_key": "test_queue",
+    "payload": "{ \"key\": \"value\" }",
+    "payload_encoding": "string"
+  },
+
+  "extendedVersionMessage": {
+    "properties": {
+      "content_type": "application/json",
+      "content_encoding": "UTF-8",
+      "delivery_mode": 2,
+      "priority": 1,
+      "correlation_id": "some_correlation_id",
+      "reply_to": "callback_queue_name",
+      "expiration": "60000",
+      "message_id": "some_unique_id",
+      "timestamp": "current_timestamp",
+      "type": "custom_type",
+      "user_id": "user_id",
+      "app_id": "app_id",
+      "cluster_id": "cluster_id",
+      "headers": {
+        "headerKey1": "headerValue1",
+        "headerKey2": "headerValue2"
+      }
+    },
+    "routing_key": "test_queue",
+    "payload": "{ \"key\": \"value\" }",
+    "payload_encoding": "string"
+  }
+}

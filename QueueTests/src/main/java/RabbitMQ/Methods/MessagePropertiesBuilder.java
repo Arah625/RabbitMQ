@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class MessagePropertiesBuilder {
     private Map<String, Object> headers;
+    private Integer deliveryMode;
     private String messageId;
     private Integer priority;
     private String contentType;
@@ -21,8 +22,15 @@ public class MessagePropertiesBuilder {
     private String appId;
     private String clusterId;
 
+
+
     public MessagePropertiesBuilder() {
         headers = new HashMap<>();
+    }
+
+    public MessagePropertiesBuilder withDeliveryMode(int deliveryMode) {
+        this.deliveryMode = deliveryMode;
+        return this;
     }
 
     public MessagePropertiesBuilder withHeader(String key, Object value) {
@@ -94,6 +102,9 @@ public class MessagePropertiesBuilder {
         AMQP.BasicProperties.Builder propertiesBuilder = new AMQP.BasicProperties.Builder()
                 .headers(headers);
 
+        if (deliveryMode != null) {
+            propertiesBuilder = propertiesBuilder.deliveryMode(deliveryMode);
+        }
         if (messageId != null) {
             propertiesBuilder = propertiesBuilder.messageId(messageId);
         }

@@ -9,11 +9,11 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
 
-public class PublishMessagePage {
+public class PublishMessage {
 
     private Channel channel; // RabbitMQ channel
 
-    public PublishMessagePage(Channel channel) {
+    public PublishMessage(Channel channel) {
         this.channel = channel;
     }
 
